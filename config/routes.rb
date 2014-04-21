@@ -1,6 +1,8 @@
 RecipiesApp::Application.routes.draw do
-  resources :recipes
+  get "static_pages/home"
+  get "static_pages/help"
 
+  resources :recipes
   resources :dishtypes
 
   # The priority is based upon order of creation: first created -> highest priority.
