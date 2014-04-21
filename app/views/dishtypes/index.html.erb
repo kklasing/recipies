@@ -1,0 +1,27 @@
+<h1>Listing dishtypes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dishtypes.each do |dishtype| %>
+      <tr>
+        <td><%= dishtype.name %></td>
+        <td><%= link_to 'Show', dishtype %></td>
+        <td><%= link_to 'Edit', edit_dishtype_path(dishtype) %></td>
+        <td><%= link_to 'Destroy', dishtype, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Dishtype', new_dishtype_path %>
