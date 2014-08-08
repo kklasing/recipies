@@ -11,13 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140421175251) do
+ActiveRecord::Schema.define(version: 20140808204636) do
 
   create_table "dishtypes", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "dishtypes", ["name"], name: "index_dishtypes_on_name", unique: true
 
   create_table "recipes", force: true do |t|
     t.string   "name"
