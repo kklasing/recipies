@@ -1,9 +1,6 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @dishtype.name %>
-</p>
-
-<%= link_to 'Edit', edit_dishtype_path(@dishtype) %> |
-<%= link_to 'Back', dishtypes_path %>
+<div class="row">
+    <h1 class="page-header"><%= @dishtype.name %></h1>
+    <p id="notice"><%= notice %></p>
+    <%= link_to '<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-arrow-left"></span> Back</button>'.html_safe, dishtypes_path %>
+    <%= link_to '<button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-edit"></span> Edit</button>'.html_safe, edit_dishtype_path(@dishtype) %>
+</div>

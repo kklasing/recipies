@@ -1,6 +1,11 @@
-<h1>Editing dishtype</h1>
+<div class="row">
+    <h1 class="page-header">Edit dishtype</h1>
 
-<%= render 'form' %>
+    <%= render 'form' %>
 
-<%= link_to 'Show', @dishtype %> |
-<%= link_to 'Back', dishtypes_path %>
+    <%= link_to '<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-arrow-left"></span> Back</button>'.html_safe, dishtypes_path %>
+    <%= link_to '<button type="button" class="btn btn-default"> Show</button>'.html_safe, @dishtype %>
+
+</div>
+
+

@@ -19,10 +19,14 @@
     <%= f.label :description %><br>
     <%= f.text_field :description %>
   </div>
+
   <div class="field">
-    <%= f.label :dishtype_id %><br>
-    <%= f.number_field :dishtype_id %>
+    <%= f.label :dishtype %><br />
+
+    <%= collection_select(:recipe, :dishtype_id, @dishtypes, :id, :name, {:prompt => false })  %>
+
   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

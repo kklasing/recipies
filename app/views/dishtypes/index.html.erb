@@ -1,27 +1,28 @@
-<h1>Listing dishtypes</h1>
+<div class="row"> <!-- gebruik altijd maar een en zet daar de div bij die het aantal kolommen aan geeft -->
+  <div class="page-header">
+    <h1>Listing dishtypes</h1>
+  </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @dishtypes.each do |dishtype| %>
+  <table class="table table-striped table-hover">
+    <thead>
       <tr>
-        <td><%= dishtype.name %></td>
-        <td><%= link_to 'Show', dishtype %></td>
-        <td><%= link_to 'Edit', edit_dishtype_path(dishtype) %></td>
-        <td><%= link_to 'Destroy', dishtype, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Name</th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @dishtypes.each do |dishtype| %>
+        <tr>
+          <td><%= link_to dishtype.name, dishtype %></td>
+          <td>
+            <%= link_to '<button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-edit"></span> Edit</button>'.html_safe, edit_dishtype_path(dishtype) %>
+            <%= link_to '<button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-trash"></span> Delete</button>'.html_safe, dishtype, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Dishtype', new_dishtype_path %>
+  <%= link_to '<button type="button" class="btn btn-primary">New Dishtype</button>'.html_safe, new_dishtype_path %>
+</div>

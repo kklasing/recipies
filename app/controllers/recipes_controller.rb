@@ -15,10 +15,12 @@ class RecipesController < ApplicationController
   # GET /recipes/new
   def new
     @recipe = Recipe.new
+    @dishtypes = Dishtype.all
   end
 
   # GET /recipes/1/edit
   def edit
+    @dishtypes = Dishtype.all
   end
 
   # POST /recipes
