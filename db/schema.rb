@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140808204636) do
+ActiveRecord::Schema.define(version: 20140810175102) do
 
   create_table "dishtypes", force: true do |t|
     t.string   "name"
@@ -27,6 +27,10 @@ ActiveRecord::Schema.define(version: 20140808204636) do
     t.integer  "dishtype_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "number_of_persons", default: 1
+    t.integer  "preparation_time",  default: 0
+    t.integer  "waiting_time",      default: 0
+    t.integer  "cooking_time",      default: 0
   end
 
 end
